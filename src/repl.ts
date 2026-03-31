@@ -25,7 +25,7 @@ rl.on("line", async (input: string) =>{
     return;
   }
   try {
-  await commandName.callback(state);
+  await commandName.callback(state, ...parse.slice(1));
   rl.prompt();
   } catch (err) {
   console.log((err as Error).message)
